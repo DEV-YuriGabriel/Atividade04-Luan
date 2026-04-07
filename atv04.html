@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades 04</title>
+    <style>
+       body {
+            background-color: rgb(210, 208, 208);
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+ 
+        input {
+            background-color: rgb(194, 194, 194);
+            text-align: center;
+            padding: 8px 12px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+ 
+        button {
+            background-color: rgb(194, 194, 194);
+            text-align: center;
+            padding: 8px 16px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+ 
+        button:hover {
+            background-color: rgb(170, 170, 170);
+        }
+ 
+        h1 {
+            color: rgb(80, 70, 70);
+            font-size: 1rem;
+            margin: 25px 0 12px 0;
+        }
+ 
+        p {
+            font-family: verdana;
+            font-size: 20px;
+            color: rgb(60, 55, 55);
+            margin-top: 6px;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>
+      Atividade 01 — Criar um campo para digitar nome e idade e mostrar: "Olá,
+      [nome], você tem [idade] anos."
+    </h1>
+
+    <input type="text" placeholder="Digite o seu nome" id="nomeDigitado" />
+    <button id="mostrarNome">Enviar</button>
+    <p id="resultadoNome"></p>
+
+    <input type="text" placeholder="Digite a sua idade" id="idadeDigitada" />
+    <button id="mostrarIdade">Enviar</button>
+    <p id="resultadoIdade"></p>
+
+    <h1>
+      Atividade 02 — Criar um botão que mostre a mensagem: "Bem-vindo ao
+      JavaScript!"
+    </h1>
+
+    <button id="mostrarMensagemScript">Mostrar Mensagem</button>
+
+    <h1>
+      Atividade 03 — Criar um botão para limpar o conteúdo do input e do
+      parágrafo.
+    </h1>
+
+    <button id="limparConteudo">Limpar</button>
+
+    <h1>
+      // Atividade 05 // Fazer soma, subtração, multiplicação e divisão de dois
+      números.
+    </h1>
+
+    <input
+      type="Number"
+      placeholder="Digite o primeiro número"
+      id="primeiroNumero"
+    />
+    <input
+      type="Number"
+      placeholder="Digite o segundo núemero"
+      id="segundoNumero"
+    />
+    <button id="botaoCalculo">ENVIAR</button>
+    <p id="resultadoCalculo"></p>
+
+    <h1>
+      // Atividade 06 // Criar três inputs e calcular a média de 3 números.
+    </h1>
+
+    <input type="Number" placeholder="Digite o primeiro número" id="media1" />
+    <input type="Number" placeholder="Digite o segundo número" id="media2" />
+    <input type="Number" placeholder="Digite o terceiro número" id="media3" />
+    <button id="botaoMedia">Calcular Média</button>
+    <p id="resultadoMedia"></p>
+
+    <h1>
+      // Atividade 07 // Ler um número e mostrar: // dobro, triplo e metade.
+    </h1>
+
+    <input type="number" placeholder="Digite um número" id="numeroMostrar" />
+    <button id="BotaoMostrar">ENVIAR</button>
+    <p id="mostrarDobroTriploMetade"></p>
+
+    <h1>
+      // Atividade 08 // Ler base e altura e calcular a área de um retângulo.
+    </h1>
+
+    <input type="Number" placeholder="Digite a base" id="identificarBase" />
+    <input type="Number" placeholder="Digite a altura" id="identificarAltura" />
+    <button id="identificarBotao">ENVIAR</button>
+    <p id="identificarResultado"></p>
+
+    <h1>
+      // Atividade 09 // Ler salário e mostrar salário com aumento de 10%.
+    </h1>
+
+    <input
+      type="Number"
+      placeholder="Informe o seu salário"
+      id="identificarSalario"
+    />
+    <button id="identificarSalarioBotao">ENVIAR</button>
+    <p id="identificarSalarioResultado"></p>
+
+    <script>
+      // Atividade 01 - Mostrar Nome
+      const mostraNome = document.getElementById("mostrarNome");
+      mostraNome.addEventListener("click", function () {
+        const nome = document.getElementById("nomeDigitado").value;
+        document.getElementById("resultadoNome").textContent = "Opa, " + nome;
+      });
+
+      // Atividade 01 - Mostrar Idade
+      const mostraIdade = document.getElementById("mostrarIdade");
+      mostraIdade.addEventListener("click", function () {
+        const idade = document.getElementById("idadeDigitada").value;
+        document.getElementById("resultadoIdade").textContent =
+          "Você tem " + idade + " anos.";
+      });
+
+      // Atividade 02 - Mostrar Mensagem
+      const mostrarMensagemJava = document.getElementById(
+        "mostrarMensagemScript",
+      );
+      mostrarMensagemJava.addEventListener("click", function () {
+        alert("Bem-vindo ao JavaScript!");
+      });
+
+      // Atividade 03 - Limpar Conteúdo
+      const resultadoLimpar = document.getElementById("limparConteudo");
+      resultadoLimpar.addEventListener("click", function () {
+        document.getElementById("nomeDigitado").value = "";
+        document.getElementById("idadeDigitada").value = "";
+        document.getElementById("resultadoNome").textContent = "";
+        document.getElementById("resultadoIdade").textContent = "";
+      });
+
+      // Atividade 05 Fazer soma, subtração, multiplicação e divisão de dois números.
+      const campo1 = document.getElementById("primeiroNumero");
+      const campo2 = document.getElementById("segundoNumero");
+      const buttonCalcular = document.getElementById("botaoCalculo");
+      const result = document.getElementById("resultadoCalculo");
+
+      buttonCalcular.addEventListener("click", function () {
+        const numero1 = Number(campo1.value);
+        const numero2 = Number(campo2.value);
+
+        const soma = numero1 + numero2;
+        const dividir = numero1 / numero2;
+        const multiplicacao = numero1 * numero2;
+        const subtracao = numero1 - numero2;
+
+        result.innerText = "Soma: " + soma;
+        result.innerText += "\nDivisão: " + dividir;
+        result.innerText += "\nMultiplicação: " + multiplicacao;
+        result.innerText += "\nSubtração: " + subtracao;
+      });
+
+      // Atividade 06 // Criar três inputs e calcular a média de 3 números.
+
+      const med1 = document.getElementById("media1");
+      const med2 = document.getElementById("media2");
+      const med3 = document.getElementById("media3");
+
+      const buttonMedia = document.getElementById("botaoMedia");
+      const medResultado = document.getElementById("resultadoMedia");
+
+      buttonMedia.addEventListener("click", function () {
+        const number1 = Number(med1.value);
+        const number2 = Number(med2.value);
+        const number3 = Number(med3.value);
+
+        const media = (number1 + number2 + number3) / 3;
+
+        medResultado.innerText = "A média é " + media;
+      });
+
+      // Atividade 07 // Ler um número e mostrar: // dobro, triplo e metade.
+
+      const numeroMostrar = document.getElementById("numeroMostrar");
+      const botaoMostra = document.getElementById("BotaoMostrar");
+      const resultadoMostrar = document.getElementById(
+        "mostrarDobroTriploMetade",
+      );
+
+      botaoMostra.addEventListener("click", function () {
+        const numeral = Number("" + numeroMostrar.value);
+        const dobro = numeral * 2;
+        const triplo = numeral * 3;
+        const metade = numeral / 2;
+
+        resultadoMostrar.innerText = `Dobro: ${dobro}, Triplo: ${triplo}, Metade: ${metade}`;
+      });
+
+      // Atividade 08 // Ler base e altura e calcular a área de um retângulo.
+
+      const campoBase = document.getElementById("identificarBase");
+      const campoAltura = document.getElementById("identificarAltura");
+      const campoBotao = document.getElementById("identificarBotao");
+      const campoResultado = document.getElementById("identificarResultado");
+
+      campoBotao.addEventListener("click", function () {
+        const calBase = Number(campoBase.value);
+        const calAltura = Number(campoAltura.value);
+
+        const somarBaseAltura = calBase * calAltura;
+
+        campoResultado.innerText = "O resultado das soma é " + somarBaseAltura;
+      });
+
+      // Atividade 09 // Ler salário e mostrar salário com aumento de 10%.
+
+      const salarioMeu = document.getElementById("identificarSalario");
+      const botaoSalario = document.getElementById("identificarSalarioBotao");
+      const resultadoSalario = document.getElementById(
+        "identificarSalarioResultado",
+      );
+
+      botaoSalario.addEventListener("click", function () {
+        const salariado = Number(salarioMeu.value);
+        const aumentarSalarioPorcentagem = salariado * 1.1;
+
+        resultadoSalario.innerText =
+          "O seu salário teve um aumento de 10%, e o seu novo salário será: " +
+          aumentarSalarioPorcentagem.toFixed(2);
+      });
+    </script>
+  </body>
+</html>
